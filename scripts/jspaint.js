@@ -12,6 +12,7 @@ class JSPaint{
 		this.canvas.addEventListener("pointerdown",this.startPainting.bind(this));
 		this.canvas.addEventListener("pointerup",this.stopPainting.bind(this));
 
+		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(),'repeat');
 	}
 
 	penPosition(e){
@@ -42,6 +43,23 @@ class JSPaint{
 	}
 }
 
+function chalkCanvas(){
+	const patternCanvas = document.createElement('canvas');
+	const patternContext = patternCanvas.getContext('2d');
+
+	patternCanvas.width=50;
+	patternCanvas.height=50;
+
+	patternContext.fillStyle='rgba(0,0,0,0)';
+	patternContext.fillRect(0,0,patternCanvas.width,patternCanvas.height);
+	patternContext.fillStyle='rgba(255,255,255,1)';
+
+	patternContext.fillRect(12,12,25,25);
+	patternContext.stroke();
+	return patternCanvas;
+	
+
+}
 
 
 function main(canvasID){
