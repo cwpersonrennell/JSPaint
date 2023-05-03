@@ -54,7 +54,12 @@ function chalkCanvas(size,rgba='rgba(0,0,0,1)'){
 	patternContext.fillRect(0,0,patternCanvas.width,patternCanvas.height);
 	patternContext.fillStyle=rgba;
 
-	patternContext.fillRect(0,0,size,size);
+	for(let i = 0;i<size;i++){
+		for(let j = 0;j<size;j++){
+			if(Math.random()>0.5)
+				patternContext.fillRect(i,j,1,1);
+		}
+	}
 	patternContext.stroke();
 	return patternCanvas;
 	
