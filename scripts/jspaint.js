@@ -44,7 +44,7 @@ class JSPaint{
 
 
 
-function main(canvasId){
+function main(canvasID){
 	const paintApp = new JSPaint(canvasID);
 	
 	function JSPaintLoop(){
