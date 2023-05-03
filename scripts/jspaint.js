@@ -3,7 +3,7 @@ class JSPaint{
 		this.canvas= document.getElementById(canvasID);
 		this.ctx = this.canvas.getContext('2d');
 		this.isPainting=false;
-		this.lineWidth=10;
+		this.lineWidth=3;
 		this.rgba = 'rgba(100,0,0,1)';
 		this.x = 0;
 		this.y = 0;
@@ -47,8 +47,8 @@ function chalkCanvas(size,rgba='rgba(0,0,0,1)'){
 	const patternCanvas = document.createElement('canvas');
 	const patternContext = patternCanvas.getContext('2d');
 
-	patternCanvas.width=size;
-	patternCanvas.height=size;
+	patternCanvas.width=size*5;
+	patternCanvas.height=size*5;
 
 	patternContext.fillStyle='rgba(255,255,255,0)';
 	patternContext.fillRect(0,0,patternCanvas.width,patternCanvas.height);
