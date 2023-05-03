@@ -4,7 +4,7 @@ class JSPaint{
 		this.ctx = this.canvas.getContext('2d');
 		this.isPainting=false;
 		this.lineWidth=10;
-
+		this.rgba = 'rgba(100,0,0,1)';
 		this.x = 0;
 		this.y = 0;
 
@@ -12,8 +12,7 @@ class JSPaint{
 		this.canvas.addEventListener("pointerdown",this.startPainting.bind(this));
 		this.canvas.addEventListener("pointerup",this.stopPainting.bind(this));
 
-		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(10),'no-repeat');
-	}
+		}
 
 	penPosition(e){
 		this.x = e.clientX-this.canvas.offsetLeft;
@@ -21,6 +20,7 @@ class JSPaint{
 	}
 
 	startPainting(e){
+		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(this.lineWidth),'repeat');
 		this.isPainting=true;
 		this.ctx.beginPath();
 		this.ctx.moveTo(this.x,this.y);
