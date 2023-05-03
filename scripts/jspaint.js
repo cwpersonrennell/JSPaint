@@ -20,7 +20,7 @@ class JSPaint{
 	}
 
 	startPainting(e){
-		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(this.lineWidth),'repeat');
+		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(this.lineWidth,this.rgba),'repeat');
 		this.isPainting=true;
 		this.ctx.beginPath();
 		this.ctx.moveTo(this.x,this.y);
@@ -56,7 +56,7 @@ function chalkCanvas(size,rgba='rgba(0,0,0,1)'){
 
 	for(let i = 0;i<size;i++){
 		for(let j = 0;j<size;j++){
-			if(Math.random()>0.5)
+			if(Math.random()>0.45)
 				patternContext.fillRect(i,j,1,1);
 		}
 	}
