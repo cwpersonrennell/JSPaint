@@ -69,7 +69,7 @@ class JSPaint{
 			this.ctx.lineTo(this.x,this.y);
 			this.ctx.stroke();
 		}else{
-			this.drawImage(this.pen,this.x,this.y);
+			this.ctx.drawImage(this.pen,this.x,this.y);
 		}
 	}
 }
