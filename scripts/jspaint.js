@@ -12,6 +12,7 @@ class JSPaint{
 		this.canvas.addEventListener("pointerdown",this.startPainting.bind(this));
 		this.canvas.addEventListener("pointerup",this.stopPainting.bind(this));
 
+		this.pen = chalkCanvas(this.lineWidth,this.rgba);
 		}
 
 	set lineWidth(val){
@@ -41,10 +42,13 @@ class JSPaint{
 	}
 
 	startPainting(e){
-		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(this.lineWidth,this.rgba),'repeat');
+		this.pen = chalkCanvas(this.lineWidth,this.rgba);
 		this.isPainting=true;
-		this.ctx.beginPath();
-		this.ctx.moveTo(this.x,this.y);
+		
+		if(this.drawPath){
+			this.ctx.beginPath();
+			this.ctx.moveTo(this.x,this.y);
+		}
 	}
 
 	stopPainting(e){
@@ -58,10 +62,15 @@ class JSPaint{
 
 	draw(){
 		
-		this.ctx.lineWidth=this.lineWidth;
-		this.ctx.lineCap='round';
-		this.ctx.lineTo(this.x,this.y);
-		this.ctx.stroke();
+
+		if(this.drawPath){
+			this.ctx.lineWidth=this.lineWidth;
+			this.ctx.lineCap='round';
+			this.ctx.lineTo(this.x,this.y);
+			this.ctx.stroke();
+		}else{
+			this.drawImage(this.pen,this.x,this.y);
+		}
 	}
 }
 
@@ -87,7 +96,6 @@ function chalkCanvas(size,rgba='rgba(0,0,0,1)'){
 	}
 	patternContext.stroke();
 	return patternCanvas;
-	
 
 }
 
