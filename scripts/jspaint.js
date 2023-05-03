@@ -1,7 +1,7 @@
 class JSPaint{
 	constructor(canvasID){
 		this.canvas= document.getElementById(canvasID);
-		this.ctx = canvas.getContext('2d');
+		this.ctx = this.canvas.getContext('2d');
 		this.isPainting=false;
 		this.lineWidth=10;
 
