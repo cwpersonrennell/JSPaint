@@ -50,9 +50,9 @@ function chalkCanvas(){
 	patternCanvas.width=50;
 	patternCanvas.height=50;
 
-	patternContext.fillStyle='rgba(0,0,0,0)';
+	patternContext.fillStyle='rgba(255,255,255,0)';
 	patternContext.fillRect(0,0,patternCanvas.width,patternCanvas.height);
-	patternContext.fillStyle='rgba(255,255,255,1)';
+	patternContext.fillStyle='rgba(0,0,0,1)';
 
 	patternContext.fillRect(12,12,25,25);
 	patternContext.stroke();
