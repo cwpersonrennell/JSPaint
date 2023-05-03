@@ -8,9 +8,9 @@ class JSPaint{
 		this.x = 0;
 		this.y = 0;
 
-		this.canvas.addEventListener("pointermove",this.penPosition);
-		this.canvas.addEventListener("pointerdown",this.startPainting);
-		this.canvas.addEventListener("pointerup",this.stopPainting);
+		this.canvas.addEventListener("pointermove",this.penPosition.bind(this));
+		this.canvas.addEventListener("pointerdown",this.startPainting.bind(this));
+		this.canvas.addEventListener("pointerup",this.stopPainting.bind(this));
 
 	}
 
