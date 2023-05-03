@@ -15,7 +15,7 @@ class JSPaint{
 		}
 
 	handleKeyEvent(e){
-		console.log(e.keyCode);
+		console.log(`${e.keyCode}, ${e.key}`);
 	}
 
 	penPosition(e){
