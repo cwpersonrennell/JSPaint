@@ -12,7 +12,13 @@ class JSPaint{
 		this.canvas.addEventListener("pointerdown",this.startPainting.bind(this));
 		this.canvas.addEventListener("pointerup",this.stopPainting.bind(this));
 
+		this.canvas.addEventListener("keyup",this.handleKeyEvent.bind(this))
+
 		}
+
+	handleKeyEvent(e){
+		console.log(e.keyCode);
+	}
 
 	penPosition(e){
 		this.x = e.clientX-this.canvas.offsetLeft;
