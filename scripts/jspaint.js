@@ -15,6 +15,7 @@ class JSPaint{
 	}
 
 	penPosition(e){
+		console.log(this);
 		this.x = e.clientX-this.canvas.offsetLeft;
 		this.y = e.clientY-this.canvas.offsetTop;
 	}
