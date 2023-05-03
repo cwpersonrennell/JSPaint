@@ -76,10 +76,13 @@ function chalkCanvas(size,rgba='rgba(0,0,0,1)'){
 	patternContext.fillRect(0,0,patternCanvas.width,patternCanvas.height);
 	patternContext.fillStyle=rgba;
 
+	const ss = size*size;
+	const s2 = size/2.0;
 	for(let i = 0;i<size;i++){
 		for(let j = 0;j<size;j++){
-			if(Math.random()>0.45)
-				patternContext.fillRect(i,j,1,1);
+			if(Math.pow(i-s2,2)+Math.pow(j-s2,2)<=ss/4)
+				if(Math.random()>0.45)
+					patternContext.fillRect(i,j,1,1);
 		}
 	}
 	patternContext.stroke();
