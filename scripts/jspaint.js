@@ -14,8 +14,25 @@ class JSPaint{
 
 		}
 
+	set lineWidth(val){
+		this._lineWidth=val;
+		if(this._lineWidth<=0){
+			this._lineWidth=1;
+		}
+	}
+
+	get lineWidth(){
+		return this._lineWidth;
+	}
+
 	handleKeyEvent(e){
-		console.log(`${e.keyCode}, ${e.key}`);
+		switch(e.key){
+			case "+":
+				this.lineWidth+=1;
+				break;
+			case "-":
+				this.lineWidth-=1;
+		}
 	}
 
 	penPosition(e){
