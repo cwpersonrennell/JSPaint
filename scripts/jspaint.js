@@ -24,7 +24,7 @@ class JSPaint{
 	}
 
 	startPainting(e){
-		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(this.lineWidth,this.rgba),'repeat');
+		
 		this.isPainting=true;
 		this.ctx.beginPath();
 		this.ctx.moveTo(this.x,this.y);
@@ -40,6 +40,7 @@ class JSPaint{
 	}
 
 	draw(){
+		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(this.lineWidth,this.rgba),'repeat');
 		this.ctx.lineWidth=this.lineWidth;
 		this.ctx.lineCap='round';
 		this.ctx.lineTo(this.x,this.y);
