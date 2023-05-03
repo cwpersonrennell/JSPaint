@@ -12,8 +12,6 @@ class JSPaint{
 		this.canvas.addEventListener("pointerdown",this.startPainting.bind(this));
 		this.canvas.addEventListener("pointerup",this.stopPainting.bind(this));
 
-		this.canvas.addEventListener("keyup",this.handleKeyEvent.bind(this))
-
 		}
 
 	handleKeyEvent(e){
@@ -76,11 +74,13 @@ function chalkCanvas(size,rgba='rgba(0,0,0,1)'){
 function main(canvasID){
 	const paintApp = new JSPaint(canvasID);
 	
+	window.addEventListener("keyup",paintApp.handleKeyEvent.bind(paintApp));
 	function JSPaintLoop(){
 		paintApp.update();
 		requestAnimationFrame(JSPaintLoop);
 	}
 	JSPaintLoop();
+
 }
 
 //Kick off the loop
