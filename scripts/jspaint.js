@@ -53,8 +53,8 @@ function chalkCanvas(size,rgba='rgba(0,0,0,1)'){
 	const patternCanvas = document.createElement('canvas');
 	const patternContext = patternCanvas.getContext('2d');
 
-	patternCanvas.width=size*5;
-	patternCanvas.height=size*5;
+	patternCanvas.width=Math.floor(size*1.05);
+	patternCanvas.height=Math.floor(size*1.05);
 
 	patternContext.fillStyle='rgba(255,255,255,0)';
 	patternContext.fillRect(0,0,patternCanvas.width,patternCanvas.height);
