@@ -12,7 +12,7 @@ class JSPaint{
 		this.canvas.addEventListener("pointerdown",this.startPainting.bind(this));
 		this.canvas.addEventListener("pointerup",this.stopPainting.bind(this));
 
-		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(10),'repeat');
+		this.ctx.strokeStyle=this.ctx.createPattern(chalkCanvas(10),'no-repeat');
 	}
 
 	penPosition(e){
