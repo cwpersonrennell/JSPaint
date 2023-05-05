@@ -61,8 +61,6 @@ class JSPaint{
 	}
 
 	draw(){
-		
-
 		if(this.drawPath){
 			this.ctx.lineWidth=this.lineWidth;
 			this.ctx.lineCap='round';
